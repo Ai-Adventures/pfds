@@ -1,0 +1,22 @@
+- file: course_material/00_getting_started
+- part: tools
+  sections:
+    - file: course_material/01_tools
+
+- part: chapters  
+  sections:
+    - file: course_material/02_expressions
+    - file: course_material/03_flow_control
+    - file: course_material/04_loops
+   
+- part: follow us on
+  sections:
+    - url: https://www.instagram.com/aiadventures.pune/
+      title: Instagram
+    - url: https://www.linkedin.com/company/aiadventures/mycompany/
+      title: LinkedIn
+    - url: https://medium.com/aiadventures
+      title: Medium
+    - url: https://discord.gg/9mqhsfvvK6
+      title: Discord
+    
