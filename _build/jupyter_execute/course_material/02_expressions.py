@@ -581,3 +581,8 @@ my_value
 # 2. Is `my value = 10` a valid syntax?
 # 3. Enter `spam = input()` into the cell and enter **101** as input, what is data type of `spam`?
 # 4. How to override the precedence of operators? 
+# 
+# 
+# ### Exercise 
+# 
+# Try to solve the questions given in this [link](https://github.com/PranavUikey/Python_Extra/blob/main/Extra_questions/00_Expressions.ipynb). And if you need any help understanding the questions feel free to seek for the mentor.

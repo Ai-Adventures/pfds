@@ -207,3 +207,16 @@ for n in range(20):
 # 3. How to use `break` and `continue` statements in a loop?
 # 4. What loop is used to create *infinite* loop
 # 5. Can we use float value in step in `range()`?
+# 
+# 
+# ### Exercise
+# 
+# Try to solve the questions given in this [link](https://github.com/PranavUikey/Python_Extra/blob/main/Extra_questions/02_Loops.ipynb). And if you need any help understanding the questions feel free to seek for the mentor.
+# 
+# 
+# 
+# ### Assignment 
+# 
+# We think it is enough Python concepts to develop a small game named **3 Missionaries and 3 Cannibals**. Click on [this link](https://drive.google.com/file/d/1Dch0Oi57FfWEQSSnOAVOgw-z3ajCuIFL/view?usp=sharing) and start working on your skills you've learnt so far. 
+# 
+# **All the best!!!** 

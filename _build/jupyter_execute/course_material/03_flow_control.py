@@ -382,4 +382,4 @@ print('Less than 10')
 # 
 # ### Exercise
 # 
-# Write a program to check if a given year is leap year or not?
+# Try to solve the questions given in this [link](https://github.com/PranavUikey/Python_Extra/blob/main/Extra_questions/01_Flow%20Control.ipynb). And if you need any help understanding the questions feel free to seek for the mentor.
