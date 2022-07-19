@@ -51,6 +51,8 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Loops" href="04_loops.html" />
@@ -294,11 +296,6 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-execution">
-   Program Execution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flow-control-statements">
    Flow Control Statements
   </a>
@@ -334,6 +331,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nested-if">
+   Nested if
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
@@ -461,11 +463,6 @@ const thebe_selector_output = ".output, .cell_output"
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#program-execution">
-   Program Execution
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#flow-control-statements">
    Flow Control Statements
   </a>
@@ -501,6 +498,11 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#nested-if">
+   Nested if
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#conclusion">
@@ -542,7 +544,7 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Like any other value, <em>Boolean values</em> are used in expressions and can be stored in variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="kc">True</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">var</span> <span class="o">=</span> <span class="kc">True</span> 
 <span class="n">var</span>
 </pre></div>
 </div>
@@ -553,17 +555,76 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
-<p>If you don’t use the proper case or you try to use <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> for variable names, Python will give you an error message.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">true</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">new_var</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">new_var</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+</pre></div>
+</div>
+</div>
+</div>
+<p>We have defined two variables <code class="docutils literal notranslate"><span class="pre">var</span></code> and <code class="docutils literal notranslate"><span class="pre">new_var</span></code> by assigning them values as <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> respectively.</p>
+<p>You can see <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code> highlighted with different colors than the variable name, because there are some names/values defined in python they are called as keywords. You can check out other python keywords from following list.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">help</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Welcome to Python 3.7&#39;s help utility!
+
+If this is your first time using Python, you should definitely check out
+the tutorial on the Internet at https://docs.python.org/3.7/tutorial/.
+
+Enter the name of any module, keyword, or topic to get help on writing
+Python programs and using Python modules.  To quit this help utility and
+return to the interpreter, just type &quot;quit&quot;.
+
+To get a list of available modules, keywords, symbols, or topics, type
+&quot;modules&quot;, &quot;keywords&quot;, &quot;symbols&quot;, or &quot;topics&quot;.  Each module also comes
+with a one-line summary of what it does; to list the modules whose name
+or summary contain a given string such as &quot;spam&quot;, type &quot;modules spam&quot;.
+
+help&gt; keywords
+
+Here is a list of the Python keywords.  Enter any keyword to get more help.
+
+False               class               from                or
+None                continue            global              pass
+True                def                 if                  raise
+and                 del                 import              return
+as                  elif                in                  try
+assert              else                is                  while
+async               except              lambda              with
+await               finally             nonlocal            yield
+break               for                 not                 
+
+help&gt; quit
+
+You are now leaving help and returning to the Python interpreter.
+If you want to ask for help on a particular object directly from the
+interpreter, you can type &quot;help(object)&quot;.  Executing &quot;help(&#39;string&#39;)&quot;
+has the same effect as typing a particular string at the help&gt; prompt.
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">true</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">3</span><span class="o">-</span><span class="mi">724</span><span class="n">ba28f4a9a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="nn">&lt;ipython-input-4-724ba28f4a9a&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">true</span>
 
 <span class="ne">NameError</span>: name &#39;true&#39; is not defined
@@ -571,24 +632,27 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 </div>
 </div>
+<p>In th example above the error says that true is not defined beause we are not using proper case (i.e.- <code class="docutils literal notranslate"><span class="pre">True</span></code>).</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">=</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="o">=</span> <span class="mi">583</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-4-22a5350c6d9a&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
-    <span class="kc">True</span> <span class="o">=</span> <span class="mi">2</span><span class="o">+</span><span class="mi">2</span>
-               <span class="o">^</span>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-6-23b1e5d93e92&gt;&quot;</span><span class="gt">, line </span><span class="mi">1</span>
+    <span class="kc">True</span> <span class="o">=</span> <span class="mi">583</span>
+              <span class="o">^</span>
 <span class="ne">SyntaxError</span>: can&#39;t assign to keyword
 </pre></div>
 </div>
 </div>
 </div>
+<p>Anything from the list of keywords can’t be used as variable name otherwise it gives you an error.</p>
 </div>
 <div class="section" id="comparison-operators">
 <h2>Comparison Operators<a class="headerlink" href="#comparison-operators" title="Permalink to this headline">¶</a></h2>
+<p>Just like primary school mathematics we’ve learnt how to compare two values/numbers using operators like &gt;, &lt;, <span class="math notranslate nohighlight">\(\neq\)</span> , there are the same operators in python called as  comparison operators. It’s just that the way we write the opeartor in python quite different. It is called syntax of any programming language. syntax means the rule we use to write code.</p>
 <p>Comparison operators compare two values and evaluate down to a single Boolean value.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -624,6 +688,107 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Just remember these points: The <code class="docutils literal notranslate"><span class="pre">==</span></code> operator (equal to) asks whether two values are the same as each other. The <code class="docutils literal notranslate"><span class="pre">=</span></code> operator (assignment) puts the value on the right into the variable on the left.</p>
 <p>To help remember which is which, notice that the <code class="docutils literal notranslate"><span class="pre">==</span></code> operator (equal to) consists of two characters, just like the <code class="docutils literal notranslate"><span class="pre">!=</span></code> operator (not equal to) consists of two characters.</p>
 <p>You’ll often use comparison operators to compare a variable’s value to some other value. We’ll see more examples of this later when you learn about flow control statements.</p>
+<p>Let’s try out all the comparison operator one-by-one in the following code cell.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">6</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">4</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">==</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">!=</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">&gt;=</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;</span><span class="n">b</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">&lt;=</span><span class="n">b</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+True
+True
+False
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition-note admonition">
+<p class="admonition-title">Note</p>
+<p>In most of the programming languages the <code class="docutils literal notranslate"><span class="pre">Boolean</span> <span class="pre">values</span></code> have corresponding <code class="docutils literal notranslate"><span class="pre">integers</span></code>(number) values assigned to it. The corresponding value of True  is 1 and that of False is 0. That means you can say <code class="docutils literal notranslate"><span class="pre">True</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">1</span></code>  and <code class="docutils literal notranslate"><span class="pre">False</span></code> is equal to <code class="docutils literal notranslate"><span class="pre">0</span></code></p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="o">==</span> <span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+</pre></div>
+</div>
+</div>
+</div>
+<p>By looking at the above examples you know we can perform arithmatical operations using these boolean values, such as following:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The value of a is&#39;</span><span class="p">,</span> <span class="n">a</span><span class="p">)</span>  
+<span class="c1"># alternate way : print(&#39;The value of a is &#39; + str(a))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The value of b is&#39;</span><span class="p">,</span> <span class="n">b</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer value of True is &#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="kc">True</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Integer value of False is &#39;</span><span class="p">,</span> <span class="nb">int</span><span class="p">(</span><span class="kc">False</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Boolean value of 1 is &#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Boolean value of 0 is &#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="mi">0</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Boolean value of a is &#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">a</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Boolean value of b is &#39;</span><span class="p">,</span> <span class="nb">bool</span><span class="p">(</span><span class="n">b</span><span class="p">))</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">+</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">//</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The value of a is 6
+The value of b is 4
+Integer value of True is  1
+Integer value of False is  0
+Boolean value of 1 is  True
+Boolean value of 0 is  False
+Boolean value of a is  True
+Boolean value of b is  True
+7
+0
+6.0
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ZeroDivisionError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-24-19797ebfb039&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="g g-Whitespace">     </span><span class="mi">13</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">*</span><span class="kc">False</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">14</span> <span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="o">/</span><span class="kc">True</span><span class="p">)</span>
+<span class="ne">---&gt; </span><span class="mi">15</span> <span class="nb">print</span><span class="p">(</span><span class="n">b</span><span class="o">//</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="ne">ZeroDivisionError</span>: integer division or modulo by zero
+</pre></div>
+</div>
+</div>
+</div>
+<p>As you can see we can use <code class="docutils literal notranslate"><span class="pre">boolean</span> <span class="pre">values</span></code> as integer as they are interconvertible using <code class="docutils literal notranslate"><span class="pre">int()</span></code> and <code class="docutils literal notranslate"><span class="pre">bool()</span></code></p>
+<div class="admonition-question admonition">
+<p class="admonition-title">Question</p>
+<p>Try it out for float values.</p>
+</div>
 </div>
 </div>
 <div class="section" id="boolean-operators">
@@ -661,24 +826,18 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Play around with <em>and</em> operator into your Jupyter Notebook’s cell and check out the output.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">True</span> <span class="ow">and</span> <span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+False
+False
+True
 </pre></div>
 </div>
 </div>
@@ -715,24 +874,18 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="kc">True</span> <span class="ow">or</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kc">False</span> <span class="ow">or</span> <span class="kc">False</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
+True
+True
+True
 </pre></div>
 </div>
 </div>
@@ -759,12 +912,14 @@ const thebe_selector_output = ".output, .cell_output"
 </table>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="kc">False</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">False</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
 </pre></div>
 </div>
 </div>
@@ -772,12 +927,12 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Much like using double negatives in speech and writing, you can nest <code class="docutils literal notranslate"><span class="pre">not</span></code> operators, though there’s never not no reason to do this in real programs.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="ow">not</span> <span class="ow">not</span> <span class="ow">not</span> <span class="ow">not</span> <span class="kc">True</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="ow">not</span> <span class="ow">not</span> <span class="ow">not</span> <span class="ow">not</span> <span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
@@ -790,36 +945,16 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Recall that the <code class="docutils literal notranslate"><span class="pre">and</span></code>, <code class="docutils literal notranslate"><span class="pre">or</span></code>, and <code class="docutils literal notranslate"><span class="pre">not</span></code> operators are called <em>Boolean operators</em> because they always operate on the Boolean values <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">False</span></code>. While expressions like <code class="docutils literal notranslate"><span class="pre">1</span> <span class="pre">&lt;</span> <span class="pre">2</span></code> aren’t Boolean values, they are expressions that evaluate down to Boolean values. Try using some Boolean expressions that use comparison operators in your computer.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">((</span><span class="mi">1</span> <span class="o">&lt;</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">3</span> <span class="o">&lt;</span> <span class="mi">4</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">((</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">4</span> <span class="o">&lt;</span> <span class="mi">5</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="mi">7</span> <span class="o">&lt;</span> <span class="mi">6</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>False
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="mi">1</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span> <span class="ow">or</span> <span class="p">(</span><span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+True
 </pre></div>
 </div>
 </div>
@@ -829,19 +964,15 @@ const thebe_selector_output = ".output, .cell_output"
 <p>You can also use multiple Boolean operators in an expression, along with the comparison operators.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">4</span> <span class="ow">and</span> <span class="ow">not</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">5</span> <span class="ow">and</span> <span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(((</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="mi">4</span><span class="p">)</span> <span class="ow">and</span> <span class="p">(</span><span class="ow">not</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">5</span><span class="p">))</span> <span class="ow">and</span> <span class="p">((</span><span class="mi">2</span> <span class="o">*</span> <span class="mi">2</span><span class="p">)</span> <span class="o">==</span> <span class="p">(</span><span class="mi">2</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
 </pre></div>
 </div>
 </div>
-</div>
-<div class="admonition-order-of-precedence admonition">
-<p class="admonition-title">Order of precedence</p>
-<p>The Boolean operators have an order of operations just like the math operators do. After all <em>math</em> and <em>comparison operators</em> are evaluated, Python evaluates the <code class="docutils literal notranslate"><span class="pre">not</span></code> operators first, then the <code class="docutils literal notranslate"><span class="pre">and</span></code> operators, and then the <code class="docutils literal notranslate"><span class="pre">or</span></code> operators.</p>
 </div>
 </div>
 <div class="section" id="elements-of-flow-control">
@@ -853,52 +984,16 @@ const thebe_selector_output = ".output, .cell_output"
 </div>
 <div class="section" id="blocks-of-code">
 <h3>Blocks of Code<a class="headerlink" href="#blocks-of-code" title="Permalink to this headline">¶</a></h3>
-<p>Lines of Python code can be grouped together in blocks. You can tell when a block begins and ends by looking at the <strong>indentation of the lines of code</strong>. There are three rules for blocks.</p>
+<p>Lines of Python code can be grouped together in one or more blocks. You can tell when a block begins. Indentation means 4 spaces or 1 Tab.</p>
+<p>There are three rules for blocks.</p>
 <ul class="simple">
 <li><p>Blocks begin when the indentation increases.</p></li>
 <li><p>Blocks can contain other blocks.</p></li>
 <li><p>Blocks end when the indentation decreases to zero or to a containing block’s indentation.</p></li>
 </ul>
-<p>Blocks are easier to understand by looking at some indented code, so let’s find the blocks in part of a small game program, shown below:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 10&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Greater than 5&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 5&#39;</span><span class="p">)</span>
-</pre></div>
+<p>Blocks are easier to understand by looking at some indentation. You might be seeing it on regular basis in YouTube Comments and Instagram comments and their replies. It is called indentation.</p>
+<p><img alt="" src="../_images/instagram_comments.jpg" /></p>
 </div>
-<p>The first block of code starts at the line <code class="docutils literal notranslate"><span class="pre">print('Less</span> <span class="pre">than</span> <span class="pre">10')</span></code> and contains all the lines after it. Inside this block is another block, which has only a single line in it: <code class="docutils literal notranslate"><span class="pre">print('Greater</span> <span class="pre">than</span> <span class="pre">5')</span></code>. The third and last block is also one line long: <code class="docutils literal notranslate"><span class="pre">print('Less</span> <span class="pre">than</span> <span class="pre">5')</span></code>.</p>
-<p>If you don’t follow the indentation (rules for blocks) you might get an error as follows:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
-<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 10&#39;</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Greater than 5&#39;</span><span class="p">)</span>
-    <span class="k">else</span><span class="p">:</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 5&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-1-e8f12391e9fb&gt;&quot;</span><span class="gt">, line </span><span class="mi">3</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 10&#39;</span><span class="p">)</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span>: expected an indented block
-</pre></div>
-</div>
-</div>
-</div>
-<p>The error message tells us that the line 3 (i.e - <code class="docutils literal notranslate"><span class="pre">print('Less</span> <span class="pre">than</span> <span class="pre">10')</span></code>) has not used proper indentation.</p>
-</div>
-</div>
-<div class="section" id="program-execution">
-<h2>Program Execution<a class="headerlink" href="#program-execution" title="Permalink to this headline">¶</a></h2>
-<p>The program execution (or simply, execution) is a term for the current instruction being executed. If you print the source code on paper and put your finger on each line as it is executed, you can think of your finger as the program execution.</p>
-<p>Not all programs execute by simply going straight down, however. If you use your finger to trace through a program with flow control statements, you’ll likely find yourself jumping around the source code based on conditions, and you’ll probably skip entire clauses.</p>
 </div>
 <div class="section" id="flow-control-statements">
 <h2>Flow Control Statements<a class="headerlink" href="#flow-control-statements" title="Permalink to this headline">¶</a></h2>
@@ -914,7 +1009,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Starting on the next line, an indented block of code (called the <code class="docutils literal notranslate"><span class="pre">if</span></code> clause)</p></li>
 </ul>
 <p>For example, let’s say you have some code that checks which grade is scored by a person. (Pretend name was assigned some value earlier.)</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">93</span>
+
+<span class="k">if</span> <span class="n">grade</span> <span class="o">&gt;=</span> <span class="mi">90</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade A&#39;</span><span class="p">)</span>    
 </pre></div>
 </div>
@@ -930,7 +1027,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Starting on the next line, an indented block of code (called the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause)</p></li>
 </ul>
 <p>Returning to above example, let’s look at some code that uses an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement to check if the scored grade is <strong>Grade A</strong> or not.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">88</span>
+
+<span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade A&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Not Grade A&#39;</span><span class="p">)</span>
@@ -948,7 +1047,9 @@ const thebe_selector_output = ".output, .cell_output"
 <li><p>Starting on the next line, an indented block of code (called the <code class="docutils literal notranslate"><span class="pre">elif</span></code> clause)</p></li>
 </ul>
 <p>Let’s add an <code class="docutils literal notranslate"><span class="pre">elif</span></code> to our grade checker to see this statement in action.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">89</span>
+
+<span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">:</span>
   <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade B&#39;</span><span class="p">)</span>
@@ -958,8 +1059,14 @@ const thebe_selector_output = ".output, .cell_output"
 <p><img alt="" src="../_images/000107.png" /></p>
 <p>The <code class="docutils literal notranslate"><span class="pre">elif</span></code> clause executes if <code class="docutils literal notranslate"><span class="pre">grade&gt;=80</span></code> is <code class="docutils literal notranslate"><span class="pre">True</span></code> and <code class="docutils literal notranslate"><span class="pre">grade&gt;=90</span></code> is <code class="docutils literal notranslate"><span class="pre">False</span></code>. However, if both of the conditions are <code class="docutils literal notranslate"><span class="pre">False</span></code>, then both of the clauses are skipped. It is not guaranteed that at least one of the clauses will be executed.</p>
 <p>When there is a chain of <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements, only one or none of the clauses will be executed. Once one of the statements conditions is found to be <code class="docutils literal notranslate"><span class="pre">True</span></code>, the rest of the <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses are automatically skipped.</p>
+<div class="admonition-order-of-precedence admonition">
+<p class="admonition-title">Order of precedence</p>
+<p>The Boolean operators have an order of operations just like the math operators do. After all <em>math</em> and <em>comparison operators</em> are evaluated, Python evaluates the <code class="docutils literal notranslate"><span class="pre">not</span></code> operators first, then the <code class="docutils literal notranslate"><span class="pre">and</span></code> operators, and then the <code class="docutils literal notranslate"><span class="pre">or</span></code> operators.</p>
+</div>
 <p>Lets add two more <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements to check grade of a student with different answers based on their grade.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">73</span>
+
+<span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade B&#39;</span><span class="p">)</span>
@@ -972,7 +1079,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Figure shows the flowchart for this.</p>
 <p><img alt="" src="../_images/000088.png" /></p>
 <p>The <strong>order of the <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements does matter</strong>, however. Let’s rearrange them to introduce a bug. Remember that the rest of the <code class="docutils literal notranslate"><span class="pre">elif</span></code> clauses are automatically skipped once a <code class="docutils literal notranslate"><span class="pre">True</span></code> condition has been found, so if you swap around some of the clauses in code above, you run into a problem. Change the code to look like the following.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">74</span>
+
+<span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade B&#39;</span><span class="p">)</span>
@@ -986,7 +1095,9 @@ const thebe_selector_output = ".output, .cell_output"
 <p>Notice how the diamonds for <code class="docutils literal notranslate"><span class="pre">grade&gt;=60</span></code> and <code class="docutils literal notranslate"><span class="pre">grade&gt;=70</span></code> are swapped.</p>
 <p><img alt="" src="../_images/000089.png" /></p>
 <p>Optionally, you can have an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement after the last <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement. In that case, it is guaranteed that at least one (and only one) of the clauses will be executed. If the conditions in every <code class="docutils literal notranslate"><span class="pre">if</span></code> and <code class="docutils literal notranslate"><span class="pre">elif</span></code> statement are <code class="docutils literal notranslate"><span class="pre">False</span></code>, then the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause is executed. For example,</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grade</span> <span class="o">=</span> <span class="mi">74</span>
+
+<span class="k">if</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade A&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">grade</span><span class="o">&gt;=</span><span class="mi">80</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Grade B&#39;</span><span class="p">)</span>
@@ -997,6 +1108,62 @@ const thebe_selector_output = ".output, .cell_output"
 <p>In plain English, this type of flow control structure would be, “If the first condition is true, do this. Else, if the second condition is true, do that. Otherwise, do something else.”</p>
 <p>When you use all three of these statements together, remember these rules about how to order them to avoid bugs. First, there is always exactly one <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. Any <code class="docutils literal notranslate"><span class="pre">elif</span></code> statements you need should follow the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. Second, if you want to be sure that at least one clause is executed, close the structure with an <code class="docutils literal notranslate"><span class="pre">else</span></code> statement.</p>
 </div>
+</div>
+<div class="section" id="nested-if">
+<h2>Nested if<a class="headerlink" href="#nested-if" title="Permalink to this headline">¶</a></h2>
+<p>Always remeber this word nested in programming there are many things in prorgramming where “nested” word is used. So nested means one inside the other, now you might be thinking what will be inside what? As the name of this topic says <code class="docutils literal notranslate"><span class="pre">nested</span> <span class="pre">if</span></code> this means there will be one or more <code class="docutils literal notranslate"><span class="pre">if</span></code> statements inside one <code class="docutils literal notranslate"><span class="pre">if</span></code> statement as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 10&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Greater than 5&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>The first block of code starts at the line <code class="docutils literal notranslate"><span class="pre">print('Less</span> <span class="pre">than</span> <span class="pre">10')</span></code> and contains all the lines after it. Inside this block is another block, which has only a single line in it: <code class="docutils literal notranslate"><span class="pre">print('Greater</span> <span class="pre">than</span> <span class="pre">5')</span></code>. The third and last block is also one line long: <code class="docutils literal notranslate"><span class="pre">print('Less</span> <span class="pre">than</span> <span class="pre">5')</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 10&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Greater than 5&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Less than 10
+Greater than 5
+</pre></div>
+</div>
+</div>
+</div>
+<p>If you don’t follow the indentation (rules for blocks) you might get an error as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">7</span>
+<span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">10</span><span class="p">:</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 10&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Greater than 5&#39;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 5&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">  File</span><span class="nn"> &quot;&lt;ipython-input-6-e8f12391e9fb&gt;&quot;</span><span class="gt">, line </span><span class="mi">3</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Less than 10&#39;</span><span class="p">)</span>
+        <span class="o">^</span>
+<span class="ne">IndentationError</span>: expected an indented block
+</pre></div>
+</div>
+</div>
+</div>
+<p>The error message tells us that the line 3 (i.e - <code class="docutils literal notranslate"><span class="pre">print('Less</span> <span class="pre">than</span> <span class="pre">10')</span></code>) has not used proper indentation.</p>
 </div>
 <div class="section" id="conclusion">
 <h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
