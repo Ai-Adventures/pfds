@@ -1,0 +1,127 @@
+2+2
+
+2
+
+1 + 2 * 3
+
+(1+2)*3
+
+123456789 * 456789
+
+2 ** 10
+
+22 / 7
+
+22 % 7
+
+2     +            2
+
+(4 - 1) * ((7 + 3) / (3 - 1))
+
+5 +
+
+40 + 5 + * 2
+
+56 % 7 * + 2
+
+10 - 5
+
+33.9 * 15
+
+'Hello world!
+
+'ai' + 'adventures'
+
+'ai' + 42
+
+'ai' * 5
+
+'ai' * 'adventures'
+
+'ai' * 5.0
+
+42 + 1
+
+42 * 7324
+
+42 - 2
+
+var = 42
+
+var + 1
+
+var * 7324
+
+var - 2
+
+apples = 9
+balls = 2
+
+(apples + balls) ** 2
+
+apples // balls
+
+print('Hello My name is aiadventures.')
+
+print(var + balls)
+var + balls + var
+
+var = var + 2
+var
+
+var = 'Hello'
+var
+
+var = 'Goodbye'
+var
+
+# This program says hello and asks for my name.
+
+print('Hello world!')
+print('What is your name?')    # ask for their name
+myName = input()
+print('It is good to meet you, ' + myName)
+print('The length of your name is:')
+print(len(myName))
+print('What is your age?')    # ask for their age
+myAge = input()
+print('You will be ' + str(int(myAge) + 1) + ' in a year.')
+
+len('hello')
+
+len('I am having a great time.')
+
+len('')
+
+print('I am ' + 24 + ' years old.')
+
+'I am ' + 24 + ' years old.'
+
+str(24)
+
+print('I am ' + str(24) + ' years old.')
+
+user_value = input()
+
+
+user_value
+
+user_value = int(user_value)
+user_value
+
+user_value *10/5
+
+int('99.99')
+
+int('twelve')
+
+my_value = input()
+
+my_value = float(my_value)
+my_value
+
+42 == '42'
+
+42 == 42.0
+
+42.0 == 0042.000

@@ -1,0 +1,22 @@
+
+format: jb-book
+root: course_material/00_getting_started
+parts:
+- caption: tools
+  chapters:
+  - file: course_material/01_tools
+- caption: chapters
+  chapters:
+  - file: course_material/02_expressions
+  - file: course_material/03_flow_control
+  - file: course_material/04_loops
+- caption: follow us on
+  chapters:
+  - url: https://www.instagram.com/aiadventures.pune/
+    title: Instagram
+  - url: https://www.linkedin.com/company/aiadventures/mycompany/
+    title: LinkedIn
+  - url: https://medium.com/aiadventures
+    title: Medium
+  - url: https://discord.gg/9mqhsfvvK6
+    title: Discord
